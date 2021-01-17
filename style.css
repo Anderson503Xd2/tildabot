@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+html, body {
+    font-family: 'Open Sans';
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    color: white;
+    background: rgb(59, 0, 84);
+    background: linear-gradient(180deg, rgba(255, 0, 202, 1) 0%, rgba(59, 0, 84, 1) 100%);
+    background-repeat: no-repeat;
+}
+
+.centered {
+    text-align: center;
+}
+
+.t-title {
+    font-size: 45px;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.light {
+    font-weight: 400;
+}
+
+.t-pink {
+    color: rgb(119, 6, 119);
+    text-shadow: 0px 0px 4px rgb(250, 248, 248);
+}
+
+div.section {
+    position: relative;
+}
+
+.section {
+    max-width: fit-content;
+    background-color: rgba(255, 255, 255, 0.199);
+    border-radius: 15px 15px 15px 15px;
+    padding: 10px;
+}
+
+.section .p {
+    text-align: left;
+}
+
+.discord {
+    font-size: 30px;
+    position: relative;
+}
+
+.discordspan {
+    vertical-align: 5px;
+}
+
+.section * {
+    margin: 0;
+}
+
+.groups  {
+    display: flex;
+    justify-content: center;
+}
+
+.br2 {
+    height: 10px;
+}
+
+
+
+a {
+    text-decoration: underline;
+    color: purple;
+}
+
+table {
+    padding: 2px;
+    border-spacing: 10px 0;
+}
+
+table {
+    text-align: center;
+}
+
+th {
+    min-width: 100px;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 60px;
+    vertical-align: top;
+}
+
+.mono {
+    font-family: monospace;
+    background-color: rgba(0, 0, 0, 0.452);
+    border-radius: 2px 2px 2px 2px;
+    padding: 2px;
+    max-width: min-content;
+    color: rgb(248, 69, 69);
+}

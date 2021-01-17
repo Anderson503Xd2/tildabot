@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TildaBot | Discord Bot</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/ee21f0e532.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="br2"></div>
+    <center>
+        <img src="https://cdn.discordapp.com/avatars/799136582363250718/600b163492297e71e666f37de1e535a0.png?size=256"
+            class="avatar"><span class="centered t-pink t-title light no-padding no-margin">~TildaBot</span>
+    </center>
+    <br>
+    <center>
+        <div class="section">
+            <h3>What is this?</h3>
+            <p class="p">TildaBot is mostly a shitpost <b>NSFW</b> bot, it probably does not contain any useful
+                commands.</p>
+            <div class="br2"></div>
+            <p><b>Interested?</b> <a
+                    href="https://discord.com/api/oauth2/authorize?client_id=799136582363250718&permissions=1342564432&scope=bot">Click
+                    here</a> to invite me!</p>
+            <br>
+            <span class="discord"><i class="fab fa-discord"></i> <a style="font-size: 20px;"
+                    href="https://discord.gg/DJ9tRSD9ZH"><span class="discordspan">Join the Discord server!</span>
+                </a></span>
+        </div>
+        </div>
+        <br>
+
+        <span style="font-size: xx-large;">Commands</span>
+        <p>Prefix: <kbd class="mono">~</kbd></p>
+        <div class="groups">
+            <div class="group">
+                <h2>Commands</h2>
+                <table id="commands">
+                    <tr>
+                        <th>Name</th>
+                        <th>Arguments</th>
+                        <th>Description</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="group">
+                <h2>Utility Commands</h2>
+                <table id="utilitycommands">
+                    <tr>
+                        <th>Name</th>
+                        <th>Arguments</th>
+                        <th>Description</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+    </center>
+</body>
+
+<script>
+    let utilityCommands = [
+
+    ]
+    let mainCommands = [
+        {
+            name: 'help',
+            args: ['fish', 'xd'],
+            desc: 'Shows a link to this site.',
+            nsfw: false
+        },
+        {
+            name: 'guro',
+            args: 'none',
+            desc: 'Displays an image of guro.',
+            nsfw: true
+        }
+    ]
+
+    mainCommands.forEach((cmd) => {
+        let tr = document.createElement("tr")
+        let name = document.createElement("td")
+        name.classList.add("name")
+        let args = document.createElement("td")
+        args.classList.add("args")
+        args.innerText = typeof (cmd.args) == "object" ? cmd.args.join(" / ") : cmd.args
+        let desc = document.createElement("td")
+        desc.classList.add("desc")
+        desc.innerText = cmd.desc
+        let nameFormat = document.createElement("span")
+        nameFormat.classList.add("mono")
+        nameFormat.innerText = cmd.name
+        if (cmd.nsfw){
+            let it = document.createElement("i")
+        it.classList.add("fa-exclamation-triangle")
+        it.classList.add("fas")
+        it.style.verticalAlign = "middle"
+        it.title = "NSFW"
+        name.appendChild(it)
+        }
+        name.appendChild(nameFormat)
+        tr.appendChild(name)
+        tr.appendChild(args)
+        tr.appendChild(desc)
+        document.getElementById("commands").appendChild(tr)
+    })
+</script>
+
+</html>
