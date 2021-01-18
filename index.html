@@ -57,26 +57,137 @@
                 </table>
             </div>
         </div>
-        
+
     </center>
 </body>
 
 <script>
     let utilityCommands = [
-
+        {
+            name: 'botinfo',
+            args: 'none',
+            nsfw: false,
+            desc: 'Get bot information.'
+        }
     ]
     let mainCommands = [
         {
-            name: 'help',
-            args: ['fish', 'xd'],
-            desc: 'Shows a link to this site.',
-            nsfw: false
+            name: '8ball',
+            args: '<question>',
+            nsfw: false,
+            desc: 'Ask the magical 8ball.'
+        },
+        {
+            name: 'cuddle',
+            args: '<member>',
+            nsfw: false,
+            desc: 'Cuddle someone.'
+        },
+        {
+            name: 'fact',
+            args: 'none',
+            nsfw: false,
+            desc: 'Get a random fact.'
+        },
+        {
+            name: 'feed',
+            args: '<member>',
+            nsfw: false,
+            desc: 'Feed someone.'
         },
         {
             name: 'guro',
             args: 'none',
-            desc: 'Displays an image of guro.',
-            nsfw: true
+            nsfw: true,
+            desc: 'Dear god, help anyone who uses this command.'
+        },
+        { name: 'help', args: 'none', nsfw: false, desc: 'Get some help.' },
+        { name: 'hug', args: '<member>', nsfw: false, desc: 'Hug someone.' },
+        {
+            name: 'image',
+            args: '[img]',
+            nsfw: true,
+            desc: 'Search up images, yes porn..'
+        },
+        {
+            name: 'invite',
+            args: 'none',
+            nsfw: false,
+            desc: 'Get a link to invite the bot.'
+        },
+        {
+            name: 'kiss',
+            args: '<member>',
+            nsfw: false,
+            desc: 'Kiss someone. �'
+        },
+        {
+            name: 'magik',
+            args: '[user]',
+            nsfw: false,
+            desc: "magikify someone's avatar."
+        },
+        {
+            name: 'neko',
+            args: 'none',
+            nsfw: false,
+            desc: 'Get a random neko image. ⚠️Includes questionable content.'
+        },
+        {
+            name: 'owoify',
+            args: '<msg>',
+            nsfw: false,
+            desc: 'Owoify youw commanyd.'
+        },
+        { name: 'pat', args: '<member>', nsfw: false, desc: 'Pat someone. ' },
+        {
+            name: 'phcomment',
+            args: '[comment]',
+            nsfw: false,
+            desc: 'Generate a comment on pornhub.'
+        },
+        {
+            name: 'ping',
+            args: 'none',
+            nsfw: false,
+            desc: "Get the bot's response time."
+        },
+        {
+            name: 'poke',
+            args: '<member>',
+            nsfw: false,
+            desc: 'Poke someone.'
+        },
+        {
+            name: 'search',
+            args: '[term]',
+            nsfw: true,
+            desc: 'Search up porn.'
+        },
+        {
+            name: 'slap',
+            args: '<member>',
+            nsfw: false,
+            desc: 'Slap someone. '
+        },
+        {
+            name: 'spank',
+            args: '<member>',
+            nsfw: true,
+            desc: 'Spank someone. '
+        },
+        {
+            name: 'tickle',
+            args: '<member>',
+            nsfw: false,
+            desc: 'Tickle someone. :D'
+        },
+        { name: 'why', args: 'none', nsfw: false, desc: 'why?' },
+        {
+            name: 'yandere',
+            args: '<term>',
+            nsfw: true,
+            desc: 'Search up stuff on the internet.'
         }
     ]
 
@@ -93,19 +204,57 @@
         let nameFormat = document.createElement("span")
         nameFormat.classList.add("mono")
         nameFormat.innerText = cmd.name
-        if (cmd.nsfw){
+        if (cmd.nsfw) {
             let it = document.createElement("i")
-        it.classList.add("fa-exclamation-triangle")
-        it.classList.add("fas")
-        it.style.verticalAlign = "middle"
-        it.title = "NSFW"
-        name.appendChild(it)
+            it.classList.add("fa-exclamation-triangle")
+            it.classList.add("fas")
+            it.style.verticalAlign = "middle"
+            it.title = "NSFW"
+            name.appendChild(it)
         }
         name.appendChild(nameFormat)
         tr.appendChild(name)
         tr.appendChild(args)
         tr.appendChild(desc)
+        let br = document.createElement("br")
+        let br2 = document.createElement("br")
         document.getElementById("commands").appendChild(tr)
+        document.getElementsByTagName("html").item(0).style.height = "100%"
+        tr.appendChild(br)
+        tr.appendChild(br2)
+    })
+
+    utilityCommands.forEach((cmd) => {
+        let tr = document.createElement("tr")
+        let name = document.createElement("td")
+        name.classList.add("name")
+        let args = document.createElement("td")
+        args.classList.add("args")
+        args.innerText = typeof (cmd.args) == "object" ? cmd.args.join(" / ") : cmd.args
+        let desc = document.createElement("td")
+        desc.classList.add("desc")
+        desc.innerText = cmd.desc
+        let nameFormat = document.createElement("span")
+        nameFormat.classList.add("mono")
+        nameFormat.innerText = cmd.name
+        if (cmd.nsfw) {
+            let it = document.createElement("i")
+            it.classList.add("fa-exclamation-triangle")
+            it.classList.add("fas")
+            it.style.verticalAlign = "middle"
+            it.title = "NSFW"
+            name.appendChild(it)
+        }
+        name.appendChild(nameFormat)
+        tr.appendChild(name)
+        tr.appendChild(args)
+        tr.appendChild(desc)
+        let br = document.createElement("br")
+        let br2 = document.createElement("br")
+        document.getElementById("utilitycommands").appendChild(tr)
+        document.getElementsByTagName("html").item(0).style.height = "100%"
+        tr.appendChild(br)
+        tr.appendChild(br2)
     })
 </script>
 
