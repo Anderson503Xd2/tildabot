@@ -1,18 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 html, body {
     font-family: 'Open Sans';
-}
-
-html {
     height: 100%;
-}
-
-body {
     color: white;
     background: rgb(59, 0, 84);
-    background: linear-gradient(180deg, rgba(255, 0, 202, 1) 0%, rgba(59, 0, 84, 1) 100%);
+    background: linear-gradient(180deg, rgba(255, 0, 202, 1) 0%, rgba(59, 0, 84, 1) inherit);
     background-repeat: no-repeat;
+    background-size: cover;
 }
+
+
 
 .centered {
     text-align: center;
@@ -101,6 +98,12 @@ th {
     width: 60px;
     vertical-align: top;
 }
+
+.name {
+    text-align: center;
+}
+
+
 
 .mono {
     font-family: monospace;
