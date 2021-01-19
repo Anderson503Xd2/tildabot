@@ -64,7 +64,10 @@
     </center>
 </body>
 
-<script>
+<script crossorigin="anonymous">
+    fetch("http://timtech.live/tildabotcommands").then(commands => {
+        console.log(commands)
+    })
     let utilityCommands = [{ "name": "botinfo", "args": "none", "nsfw": false, "desc": "Get bot information." }]
     let mainCommands = [
         {
